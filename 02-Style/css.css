@@ -116,11 +116,20 @@
   #content #preface .container{
     max-width: 730px;
   }
-  #content #preface .container .preface-downIcon{
+  .preface-downIcon-content{
     text-align: center;
+    margin-bottom: 50px;
   }
-  #content #preface .container .preface-downIcon path{
+  .preface-downIcon-content .preface-downIcon{
+    background-color: #FFF;
+    border: none;
+    outline: none;
+  }
+  .preface-downIcon path{
     color:#CD466F;
+  }
+  #preface .preface-downIcon-content{
+    margin-bottom: 0;
   }
   
 
