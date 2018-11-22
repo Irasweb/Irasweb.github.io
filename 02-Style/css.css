@@ -70,6 +70,9 @@
   /* all content */
   #content{
     position: relative;
+    height: auto;
+    overflow-y: scroll;
+    overflow: hidden;
   }
   .container{
     max-width: 960px;

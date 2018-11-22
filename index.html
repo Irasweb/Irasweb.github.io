@@ -12,7 +12,7 @@
     <title>NOUGAE-牛軋糖介紹</title>
 </head>
 
-<body>
+<body >
     <div id="all">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white navbar-default navbar-fixed-top">
             <div class="navbar_width">
@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse collapse" id="navbarNav">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link littleLine" href="#about_point">ABOUT</a>
+                            <a class="nav-link littleLine active" href="#about_point"> ABOUT</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link littleLine" href="#category_point">CATEGORY</a>
@@ -72,7 +72,7 @@
                 </a>
             </div>
         </div>
-        <div id="content" data-spy="scroll" data-target="#navbarNav" data-offset="0">
+        <div id="content" data-spy="scroll" data-target="#navbar" data-offset="0">
             <section id="preface">
                 <div class="container">
                     <div class="preface-section">
@@ -868,12 +868,15 @@
             $(this).addClass("active");
         });
 
-
         // navbar滾動監控
-        $('body').scrollspy({ target: '#navbarNav' })
+        $('body').scrollspy({ target: '#navbar' })
 
         $('[data-spy="scroll"]').each(function () {
             var $spy = $(this).scrollspy('refresh')
+        })
+
+        $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+            // do something…
         })
 
         // recipe tab
@@ -904,7 +907,6 @@
         }
 
         // navbar自動縮合
-        // but沒反應
         $(function () {
             if ($(window).width() < 966) { //當視窗小於966時才運作
                 $('#navbar a').on('click', function () {
@@ -913,6 +915,7 @@
             }
         });
 
+        // go to top
         function scrollToTop(scrollDuration) {
             var cosParameter = window.scrollY / 2,
                 scrollCount = 0,
@@ -940,6 +943,10 @@
     = cosParameter + cosParameter * (cos bx)    | b stretches along the x axis = scrollCount = Math.PI / (scrollDuration / (newTimestamp - oldTimestamp))
     = cosParameter + cosParameter * (cos scrollCount * x)
 */
+
+
+
+
     </script>
 
 </body>
