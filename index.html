@@ -12,7 +12,7 @@
     <title>NOUGAE-牛軋糖介紹</title>
 </head>
 
-<body data-target="#navbar" data-spy="scroll">
+<body>
     <div id="all">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white navbar-default navbar-fixed-top">
             <div class="navbar_width">
@@ -24,7 +24,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="nav navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link littleLine" href="#about_point">ABOUT</a>
                         </li>
@@ -72,7 +72,7 @@
                 </a>
             </div>
         </div>
-        <div id="content">
+        <div id="content" data-spy="scroll" data-target="#navbarNav" data-offset="0">
             <section id="preface">
                 <div class="container">
                     <div class="preface-section">
@@ -82,12 +82,12 @@
                         <p>義大利與西班牙的杜隆糖與中東地區的佳思糖 (SEKKEH GAZ) 都是名稱、風味與口感各異的牛軋糖。</p>
                     </div>
                     <div class="preface-downIcon-content">
-                    <button class="preface-downIcon">
-                        <a href="#about_point">
-                            <i id="downIcon" class="fas fa-angle-double-down fa-3x"></i>
-                        </a>
-                    </button>
-                </div>
+                        <button class="preface-downIcon">
+                            <a href="#about_point">
+                                <i id="downIcon" class="fas fa-angle-double-down fa-3x"></i>
+                            </a>
+                        </button>
+                    </div>
                 </div>
             </section>
             <section id="about">
@@ -220,8 +220,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-12 section-item-img">
-                                <img class="w-100" src="01-Material/04-ExtendedProduct/CranberryPistachio_200.jpg"
-                                    alt="">
+                                <img class="w-100" src="01-Material/04-ExtendedProduct/CranberryPistachio_200.jpg" alt="">
                                 <div class="overlay">
                                     <div class="textContent">
                                         <p>果乾&堅果</p>
@@ -826,7 +825,7 @@
             </section>
             <div class="preface-downIcon-content">
                 <button class="preface-downIcon" onclick="scrollToTop(1000);">
-                        <i id="downIcon" class="fas fa-angle-double-up fa-3x"></i>
+                    <i id="downIcon" class="fas fa-angle-double-up fa-3x"></i>
                 </button>
             </div>
         </div>
@@ -863,6 +862,20 @@
     </script>
 
     <script>
+        // 點選navbar的active狀態切換
+        $(".navbar-light .navbar-nav .nav-link").on("click", function () {
+            $(".nav").find(".active").removeClass("active");
+            $(this).addClass("active");
+        });
+
+
+        // navbar滾動監控
+        $('body').scrollspy({ target: '#navbarNav' })
+
+        $('[data-spy="scroll"]').each(function () {
+            var $spy = $(this).scrollspy('refresh')
+        })
+
         // recipe tab
         var recipe_section_tabBtn01 = document.querySelector("#recipe_section_tabBtn_01");
         var recipe_section_tabBtn02 = document.querySelector("#recipe_section_tabBtn_02");
@@ -892,28 +905,28 @@
 
         // navbar自動縮合
         // but沒反應
-        $(function(){ 
-        if($(window).width()<990){ //當視窗小於990時才運作
-        $('.navbar a').on('click', function(){
-            $('.navbar-toggle').click();
-          });
-        }
+        $(function () {
+            if ($(window).width() < 966) { //當視窗小於966時才運作
+                $('#navbar a').on('click', function () {
+                    $('.navbar-toggler').click();
+                });
+            }
         });
 
         function scrollToTop(scrollDuration) {
-    var cosParameter = window.scrollY / 2,
-        scrollCount = 0,
-        oldTimestamp = performance.now();
-    function step (newTimestamp) {
-        scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
-        if (scrollCount >= Math.PI) window.scrollTo(0, 0);
-        if (window.scrollY === 0) return;
-        window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
-        oldTimestamp = newTimestamp;
-        window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-}
+            var cosParameter = window.scrollY / 2,
+                scrollCount = 0,
+                oldTimestamp = performance.now();
+            function step(newTimestamp) {
+                scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
+                if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+                if (window.scrollY === 0) return;
+                window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
+                oldTimestamp = newTimestamp;
+                window.requestAnimationFrame(step);
+            }
+            window.requestAnimationFrame(step);
+        }
 /* 
     Explanations:
     - pi is the length/end point of the cosinus intervall (see above)
@@ -930,4 +943,5 @@
     </script>
 
 </body>
+
 </html>

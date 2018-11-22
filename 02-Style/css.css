@@ -3,9 +3,6 @@
     font-family: "微軟正黑體";
     color:rgb(87, 87, 87);
   }
-  body{
-      position: relative;
-  }
   h1{
     font-weight: bold;
     text-align: center;
@@ -71,6 +68,9 @@
   }
 
   /* all content */
+  #content{
+    position: relative;
+  }
   .container{
     max-width: 960px;
     padding-top: 4rem;
