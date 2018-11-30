@@ -3,6 +3,9 @@
     font-family: "微軟正黑體";
     color:rgb(87, 87, 87);
   }
+  body{
+    position: relative;
+  }
   h1{
     font-weight: bold;
     text-align: center;
@@ -30,35 +33,36 @@
 
 
   /* navbar */
-  #navbar{
+  #navbar-example2{
     height: 115px;
     position: sticky;
     top: 0;
     z-index: 999;
+    background-color: rgba(255, 255, 255, 0.8)!important;
   }
   .navbar_width{
     margin: 0 auto;
   }
-  #navbar #logo{
+  #navbar-example2 #logo{
     float: left;
     }
-    #navbar #navbarNav{
+    #navbar-example2 #navbarNav{
     float: right;
  }
-  #navbar #navbarNav{
+  #navbar-example2 #navbarNav{
     justify-content: flex-end;
     margin-top: 30px;
     z-index: 999;
-    background-color: #FFFFFF;
+    background-color: none;
   }
-  #navbar #navbarNav ul li .littleLine{
+  #navbar-example2 #navbarNav ul li .littleLine{
     border-right: 1px solid #575757;
     padding: 0 1rem;
   }
-  #navbar #navbarNav ul li .noLine{
+  #navbar-example2 #navbarNav ul li .noLine{
     padding: 0 1rem;
   }
-  #navbar #navbarNav ul li a:hover{
+  #navbar-example2 #navbarNav ul li a:hover{
       color: #FFFFFF;
       background-color: #CD466F;
   }
@@ -80,39 +84,25 @@
     padding-bottom: 4rem;
   }
   #about{
-      position: relative;
+    padding-top: 115px;
+    margin-top: -115px;
   }
-  #about_point{
-      position: absolute;
-      top: -115px;
-  }
+
   #category{
-      position: relative;
-  }
-  #category_point{
-      position: absolute;
-      top: -115px;
+    padding-top: 115px;
+    margin-top: -115px;
   }
   #recipe{
-      position: relative;
-  }
-  #recipe_point{
-      position: absolute;
-      top: -115px;
+    padding-top: 115px;
+    margin-top: -115px;
   }
   #nutrition{
-      position: relative;
-  }
-  #nutrition_point{
-      position: absolute;
-      top: -115px;
+    padding-top: 115px;
+    margin-top: -115px;
   }
   #famousShop{
-      position: relative;
-  }
-  #famousShop_point{
-      position: absolute;
-      top: -115px;
+    padding-top: 115px;
+    margin-top: -115px;
   }
 
   /* preface */
@@ -551,31 +541,56 @@
   }
 
   @media only screen and (max-width: 991px) {
+    /* all */
+    #about{
+      padding-top: 90px;
+      margin-top: -90px;
+    }
+  
+    #category{
+      padding-top: 90px;
+      margin-top: -90px;
+    }
+    #recipe{
+      padding-top: 90px;
+      margin-top: -90px;
+    }
+    #nutrition{
+      padding-top: 90px;
+      margin-top: -90px;
+    }
+    #famousShop{
+      padding-top: 90px;
+      margin-top: -90px;
+    }
 
     /* navbar */
-    #navbar{
+    #navbar-example2{
+      height: 90px;
       padding: 0;
+      background-color: #FFFFFF!important;
     }
-    #navbar #logo{
+    #navbar-example2 #logo{
         position: absolute;
-        top: 20px;
+        top: 10px;
         left: 15px;
     }
-    #navbar #burger{
+    #navbar-example2 #burger{
         position: absolute;
-        top: 35px;
+        top: 25px;
         right: 15px;
     }
-    #navbar #navbarNav{
+    #navbar-example2 #navbarNav{
       position: absolute;
       width: 100%;
       left: 0;
+      background-color: #FFFFFF;
     }
-    #navbar #navbarNav ul li.nav-item{
+    #navbar-example2 #navbarNav ul li.nav-item{
       padding: .5rem 0;
       text-align: center;
     }
-    #navbar #navbarNav ul li .littleLine{
+    #navbar-example2 #navbarNav ul li .littleLine{
       border: none;
     }
 
